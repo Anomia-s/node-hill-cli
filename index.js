@@ -91,8 +91,15 @@ const createFile = (data) => {
         var fs = require('fs');
         scripts = `${data.name}/user_scripts`
         maps = `${data.name}/maps`
-        fs.mkdirSync(dir,{recursive: true});
-        fs.writeFile(`${__dirname}/${data.name}/start.js`, `
+        fs.mkdirSync(scripts,{recursive: true});
+        fs.mkdirSync(maps, {recursive: true});
+        fs.writeFile(`${process.cwd()}/${data.name}/user_scripts/index.js`, `console.log("Here goes your script bois!");`, function (err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                    console.log("Done");
+                });
+        fs.writeFile(`${process.cwd()}/${data.name}/start.js`, `
 
 // Generated using Node-Hill-CLI by Edge.
 const nh = require('node-hill');

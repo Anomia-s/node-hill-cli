@@ -1,5 +1,5 @@
 {
-    "name": "node-hill-cli",
+    "name": "@shiggy-loves-pc/node-hill-cli",
     "version": "1.0.2",
     "description": "A Node-Hill CLI",
     "main": "index.js",
@@ -7,7 +7,7 @@
         "start": "node index.js"
     },
     "bin": {
-        "create": "index.js"
+        "nh-cli": "index.js"
     },
     "keywords": [],
     "author": "Shiggy, Deweystuff, Hirundinidae",
