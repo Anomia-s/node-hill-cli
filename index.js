@@ -1,20 +1,7 @@
 #!/usr/bin/env node
 
 'esversion: 6';
-//If you want to know when the player has defintely started playing
 
-//If you want to know if this can't play for some reason
-
-/* 
-  La linea anterior es una instancia de una línea shebang: 
-  la primera línea en un archivo ejecutable de texto sin formato en plataformas tipo Unix 
-  que le dice al sistema a qué intérprete pasar ese archivo para su ejecución, 
-  a través del comando línea siguiendo el prefijo máfico #! (llamado shebang).
-  En Windows no admite líneas shebang, por lo que se ignoran allí; 
-  en Windows, es únicamente la extensión del nombre de archivo de un archivo determinado 
-  lo que determina qué ejecutable lo interpretará. 
-  Sin embargo, aún los necesita en el contexto de npm.
-*/
 const chalk = require("chalk");
 const figlet = require("figlet");
 const inquirer = require("inquirer");
@@ -22,9 +9,8 @@ const fs = require("fs");
 const {
     cwd
 } = require("process");
-const pathBase = process.cwd();
-// Template que usaremos para la creación del contenido del fichero
-// Mostrar un banner con un mensaje formado por caracteres.
+const pathBase = process.cwd(); // Get current working directory.
+
 const msn = (msn) => {
     console.log(
         chalk.bold.red(
@@ -35,9 +21,8 @@ const msn = (msn) => {
             })
         )
     );
-};
-// Preguntas que se van a realizar y que más tarde usaremos
-const queryParams = () => {
+}; // Customize our nice message.
+const queryParams = () => { //Questions!
     const qs = [{
             name: "name",
             type: "input",
@@ -156,7 +141,8 @@ nh.startServer({
     `);
     }
 };
-// IIFE (Immediately Invoked Function Expression)
+
+// Invoke a function...
 (async () => {
     msn("NH-CLI");
     createFile(await queryParams());
